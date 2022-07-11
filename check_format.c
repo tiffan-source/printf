@@ -17,6 +17,8 @@ int check_format(char c, va_list *li)
 		case 'c':
 			t = va_arg(*li, int);
 			return (print_char(t));
+		case '%':
+			return (print_char('%'));
 		case 's':
 			str = va_arg(*li, char*);
 			return (print_string(str));
