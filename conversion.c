@@ -9,9 +9,10 @@ void convert_b(int n, int *p)
 {
 	if (n < 0)
 	{
-		_putchar('-');
+		return (-1);
+		/*_putchar('-');
 		n = -n;
-		++(*p);
+		++(*p);*/
 	}
 	if (n / 2)
 	{	++(*p);
