@@ -26,7 +26,7 @@ int _printf(const char *format, ...)
 
 			if (r_check != -1)
 			{
-				r_check = check_format(format[i + 1], &my_list);
+				r_check = check_format(format + i + 1, &my_list);
 				if (r_check != -1)
 				{
 					count += r_check;
@@ -36,34 +36,16 @@ int _printf(const char *format, ...)
 				{
 					return (-1);
 				}
+
 			}
 			else
 			{
-				for (j = i + 1; format[j] != '\0'; j++)
-				{
-					if (format[j] != ' ' && format[j + 1] != '\0')
-					{
-						while (i != (j - 1))
-						{
-							write(1, format + i, 1);
-							i++;
-							count++;
-						}
-						break;
-					}
-					if (format[j] == ' ' && format[j + 1] == '\0')
-						return (-1);
-				}
+				write(1, format + i, 1);
+				count++;
 			}
 		}
-		else
-		{
-			write(1, format + i, 1);
-			count++;
-		}
+
+		va_end(my_list);
+
+		return (count);
 	}
-
-	va_end(my_list);
-
-	return (count);
-}
