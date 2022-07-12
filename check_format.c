@@ -3,38 +3,42 @@
 /**
  * check_format - printf the next element in li
  * @c: the format
- * @li: the va_list
+ * @my_list: the va_list
  *
  *Return: size of li's element printed
  */
-int check_format(const char *c, va_list *li)
+int check_format(const char *c, va_list *my_list)
 {
-	char t = '\0';
-	char *str = NULL;
-	int nbr;
-
 	switch (*c)
 	{
-	case 'c':
-		t = va_arg(*li, int);
-		return (print_char(t));
-	case '%':
-		return (print_char('%'));
-	case 's':
-		str = va_arg(*li, char*);
-		return (print_string(str));
-	case 'i':
-		nbr = va_arg(*li, int);
-		return (print_integer(nbr));
-	case 'd':
-		nbr = va_arg(*li, int);
-		return (print_integer(nbr));
-	case 'b':
-		nbr = va_arg(*li, int);
-		return (binary(nbr));
 	case '\0':
 		return (-1);
+	case 'c':
+		return (print_char(va_arg(*my_list, int)));
+	case 's':
+		return (print_string(va_arg(*my_list, char*)));
+	case '%':
+		return (print_char('%'));
+	case 'i':
+	case 'd':
+		return (print_integer(va_arg(*my_list, int)));
+	default:
+		return (0);
 	}
+}
 
-	return (0);
+/**
+ * check_space - check next option after space
+ * @str: current position
+ *
+ * Return: number of space count
+ */
+
+int check_space(const char *str)
+{
+	while (*str == ' ')
+	{
+		return (1 + check_space(str + 1));
+	}
+	return (1);
 }

@@ -4,7 +4,9 @@
 #include <unistd.h>
 #include <stdarg.h>
 
+int _printf_r(const char *str, va_list *my_list);
 int _printf(const char *format, ...);
+int check_space(const char *str);
 int check_format(const char*, va_list *);
 int print_char(char);
 int print_string(char *);

@@ -28,6 +28,7 @@ void convert_b(int n, int *p)
 int binary(int n)
 {
 	int count = 1;
+
 	convert_b(n, &count);
 	return (count);
 }

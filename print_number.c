@@ -1,11 +1,12 @@
 #include "main.h"
 
 /**
-*print - Entry to code
-* @n : integer to print
-* @p: save size of n
-*
-*/
+ *print - Entry to code
+ * @n : integer to print
+ * @p: save size of n
+ *
+ */
+
 void print(int n, int *p)
 {
 	unsigned int num = n;
@@ -25,12 +26,13 @@ void print(int n, int *p)
 }
 
 /**
-*print_number - Entry to code
-*
-* @n : integer to print
-*
-* Return: Always all number (Success)
-*/
+ * print_integer - Entry to code
+ *
+ * @n : integer to print
+ *
+ * Return: Always all number (Success)
+ */
+
 int print_integer(int n)
 {
 	int count = 1;
