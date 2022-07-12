@@ -9,7 +9,7 @@
 
 int _printf(const char *format, ...)
 {
-	int i, count = 0;
+	int i, count = 0, return_check;
 
 	va_list my_list;
 
@@ -22,8 +22,15 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			count += check_format(format[i + 1], &my_list);
-			i++;
+			if ((return_check = check_format(format[i + 1], &my_list)) != -1)
+			{
+				count += return_check;
+				i++;
+			}
+			else
+			{
+				return (-1);
+			}
 		}
 		else
 		{
