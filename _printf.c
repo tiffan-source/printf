@@ -9,7 +9,7 @@
 
 int _printf(const char *format, ...)
 {
-	int i, count = 0, r_check;
+	int i, count = 0, r_check, j;
 
 	va_list my_list;
 
@@ -23,14 +23,37 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			r_check = check_format(format + i + 1, &my_list);
+
 			if (r_check != -1)
 			{
-				count += r_check;
-				i++;
+				r_check = check_format(format[i + 1], &my_list);
+				if (r_check != -1)
+				{
+					count += r_check;
+					i++;
+				}
+				else
+				{
+					return (-1);
+				}
 			}
 			else
 			{
-				return (-1);
+				for (j = i + 1; format[j] != '\0'; j++)
+				{
+					if (format[j] != ' ' && format[j + 1] != '\0')
+					{
+						while (i != (j - 1))
+						{
+							write(1, format + i, 1);
+							i++;
+							count++;
+						}
+						break;
+					}
+					if (format[j] == ' ' && format[j + 1] == '\0')
+						return (-1);
+				}
 			}
 		}
 		else

@@ -9,8 +9,8 @@
  */
 int check_format(const char *c, va_list *li)
 {
-	char t;
-	char *str;
+	char t = '\0';
+	char *str = NULL;
 
 	switch (*c)
 	{
