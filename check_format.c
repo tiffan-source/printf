@@ -7,27 +7,31 @@
  *
  *Return: size of li's element printed
  */
-int check_format(const char *c, va_list *li)
+int check_format(const char *c, va_list *my_list)
 {
-	char t = '\0';
-	char *str = NULL;
-
-	switch (*c)
+	switch(*c)
 	{
-	case 'c':
-		t = va_arg(*li, int);
-		return (print_char(t));
-	case '%':
-		return (print_char('%'));
-	case 's':
-		str = va_arg(*li, char*);
-		return (print_string(str));
-	/* case ' ': */
-	/* 	return (check_format(c + 1, li)); */
-
 	case '\0':
 		return (-1);
+	case 'c':
+		return (print_char(va_arg(*my_list, int)));
+	case 's':
+		return (print_string(va_arg(*my_list, char*)));
+	case '%':
+		return (print_char('%'));
+	case 'i':
+	case 'd':
+		return (print_integer(va_arg(*my_list, int)));
+	default:
+		return (0);
 	}
+}
 
-	return (0);
+int check_space(const char *str)
+{
+	while (*str == ' ')
+	{
+		return (1 + check_space(str + 1));
+	}
+	return (1);
 }
