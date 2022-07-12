@@ -6,6 +6,7 @@
  * @p: save size of n
  *
  */
+
 void print(int n, int *p)
 {
 	unsigned int num = n;
@@ -31,6 +32,7 @@ void print(int n, int *p)
  *
  * Return: Always all number (Success)
  */
+
 int print_integer(int n)
 {
 	int count = 1;
