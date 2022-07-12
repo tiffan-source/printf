@@ -7,13 +7,13 @@
  *
  *Return: size of li's element printed
  */
-int check_format(char c, va_list *li)
+int check_format(const char *c, va_list *li)
 {
 	char t = '\0';
 	char *str = NULL;
 	int nbr;
 
-	switch (c)
+	switch (*c)
 	{
 	case 'c':
 		t = va_arg(*li, int);
@@ -29,6 +29,8 @@ int check_format(char c, va_list *li)
 	case 'd':
 		nbr = va_arg(*li, int);
 		return (print_integer(nbr);
+	case ' ':
+		return (check_format(c + 1, li));
 	case '\0':
 		return (-1);
 	}
