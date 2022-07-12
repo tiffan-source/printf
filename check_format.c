@@ -11,6 +11,7 @@ int check_format(char c, va_list *li)
 {
 	char t = '\0';
 	char *str = NULL;
+	int nbr;
 
 	switch (c)
 	{
@@ -22,6 +23,12 @@ int check_format(char c, va_list *li)
 	case 's':
 		str = va_arg(*li, char*);
 		return (print_string(str));
+	case 'i':
+		nbr = va_arg(*li, int);
+		return (print_integer(nbr);
+	case 'd':
+		nbr = va_arg(*li, int);
+		return (print_integer(nbr);
 	case '\0':
 		return (-1);
 	}

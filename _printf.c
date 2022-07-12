@@ -39,14 +39,21 @@ int _printf(const char *format, ...)
 			{
 				for (j = i + 1; format[j] != '\0'; j++)
 				{
-					if (format[j] != ' ' && format[j + 1] != '\0')
+					if (format[j] != ' ')
 					{
-						while (i != (j - 1))
+						r_check = check_format(format[j], &my_list);
+						if (r_check)
 						{
-							write(1, format + i, 1);
-							i++;
-							count++;
+							count += r_check;
+							i = j;
 						}
+						else
+							while (i != (j - 1))
+							{
+								write(1, format + i, 1);
+								i++;
+								count++;
+							}
 						break;
 					}
 					if (format[j] == ' ' && format[j + 1] == '\0')
