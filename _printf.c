@@ -9,7 +9,7 @@
 
 int _printf(const char *format, ...)
 {
-	int i, count = 0, r_check, j;
+	int i, count = 0, r_check;
 
 	va_list my_list;
 
@@ -26,26 +26,21 @@ int _printf(const char *format, ...)
 
 			if (r_check != -1)
 			{
-				r_check = check_format(format + i + 1, &my_list);
-				if (r_check != -1)
-				{
-					count += r_check;
-					i++;
-				}
-				else
-				{
-					return (-1);
-				}
-
+				count += r_check;
+				i++;
 			}
 			else
 			{
-				write(1, format + i, 1);
-				count++;
+				return (-1);
 			}
+
 		}
-
-		va_end(my_list);
-
-		return (count);
+		else
+		{
+			write(1, format + i, 1);
+			count++;
+		}
 	}
+	va_end(my_list);
+	return (count);
+}
