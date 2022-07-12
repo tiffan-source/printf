@@ -10,5 +10,6 @@ int print_char(char);
 int print_string(char *);
 int print_integer(int n);
 int _putchar(char c);
+int binary(int n);
 
 #endif
