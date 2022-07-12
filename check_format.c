@@ -27,6 +27,9 @@ int check_format(const char *c, va_list *my_list)
 	case 'd':
 		d = va_arg(*my_list, int);
 		return (print_integer(d));
+	case 'b':
+		return (binary(va_arg(*my_list, int)));
+
 	default:
 		return (0);
 	}
