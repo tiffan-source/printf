@@ -9,21 +9,27 @@
  */
 int check_format(const char *c, va_list *my_list)
 {
+	int d;
+	unsigned char c_copy;
+
 	switch (*c)
 	{
 	case '\0':
 		return (-1);
 	case 'c':
-		return (print_char(va_arg(*my_list, int)));
+		c_copy = (unsigned char)va_arg(*my_list, int);
+		return (print_char(c_copy));
 	case 's':
 		return (print_string(va_arg(*my_list, char*)));
 	case '%':
 		return (print_char('%'));
 	case 'i':
 	case 'd':
-		return (print_integer(va_arg(*my_list, int)));
+		d = va_arg(*my_list, int);
+		return (print_integer(d));
 	case 'b':
 		return (binary(va_arg(*my_list, int)));
+
 	default:
 		return (0);
 	}
