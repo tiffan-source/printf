@@ -14,16 +14,16 @@ int check_format(char c, va_list *li)
 
 	switch (c)
 	{
-		case 'c':
-			t = va_arg(*li, int);
-			if (!t)
-				return (-1);
-			return (print_char(t));
-		case '%':
-			return (print_char('%'));
-		case 's':
-			str = va_arg(*li, char*);
-			return (print_string(str));
+	case 'c':
+		t = va_arg(*li, int);
+		return (print_char(t));
+	case '%':
+		return (print_char('%'));
+	case 's':
+		str = va_arg(*li, char*);
+		return (print_string(str));
+	case '\0':
+		return (-1);
 	}
 
 	return (0);

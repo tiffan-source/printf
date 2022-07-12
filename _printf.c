@@ -9,20 +9,29 @@
 
 int _printf(const char *format, ...)
 {
-	int i, count = 0;
+	int i, count = 0, r_check;
 
 	va_list my_list;
 
-	if (format == NULL || *format == '\0')
+	if (format == NULL)
 		return (-1);
+
 	va_start(my_list, format);
 
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
 		{
-			count += check_format(format[i + 1], &my_list);
-			i++;
+			r_check = check_format(format[i + 1], &my_list);
+			if (r_check != -1)
+			{
+				count += r_check;
+				i++;
+			}
+			else
+			{
+				return (-1);
+			}
 		}
 		else
 		{
