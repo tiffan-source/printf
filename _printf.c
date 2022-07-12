@@ -13,8 +13,9 @@ int _printf(const char *format, ...)
 
 	va_list my_list;
 
-	if (format == NULL || *format == '\0')
+	if (format == NULL)
 		return (-1);
+
 	va_start(my_list, format);
 
 	for (i = 0; format[i] != '\0'; i++)
