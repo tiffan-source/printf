@@ -26,7 +26,7 @@ void print(int n, int *p)
 }
 
 /**
- *print_number - Entry to code
+ * print_integer - Entry to code
  *
  * @n : integer to print
  *

@@ -1,5 +1,13 @@
 #include "main.h"
 
+/**
+ * _printf_r - tools to print character by character
+ * @str: string to print
+ * @my_list: list argument
+ *
+ * Return: number of character print
+ */
+
 int _printf_r(const char *str, va_list *my_list)
 {
 	int count = 0, next, test;
@@ -14,10 +22,7 @@ int _printf_r(const char *str, va_list *my_list)
 
 			if (test == -1)
 				return (test);
-			else
-			{
-				count += test;
-			}
+			count += test;
 		}
 		else
 		{

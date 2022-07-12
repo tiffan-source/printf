@@ -3,13 +3,13 @@
 /**
  * check_format - printf the next element in li
  * @c: the format
- * @li: the va_list
+ * @my_list: the va_list
  *
  *Return: size of li's element printed
  */
 int check_format(const char *c, va_list *my_list)
 {
-	switch(*c)
+	switch (*c)
 	{
 	case '\0':
 		return (-1);
@@ -26,6 +26,13 @@ int check_format(const char *c, va_list *my_list)
 		return (0);
 	}
 }
+
+/**
+ * check_space - check next option after space
+ * @str: current position
+ *
+ * Return: number of space count
+ */
 
 int check_space(const char *str)
 {
