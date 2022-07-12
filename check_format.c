@@ -9,13 +9,15 @@
  */
 int check_format(char c, va_list *li)
 {
-	char t;
-	char *str;
+	char t = '\0';
+	char *str = NULL;
 
 	switch (c)
 	{
 		case 'c':
 			t = va_arg(*li, int);
+			if (!t)
+				return (-1);
 			return (print_char(t));
 		case '%':
 			return (print_char('%'));
