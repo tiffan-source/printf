@@ -25,10 +25,10 @@ int check_format(const char *c, va_list *li)
 		return (print_string(str));
 	case 'i':
 		nbr = va_arg(*li, int);
-		return (print_integer(nbr);
+		return (print_integer(nbr));
 	case 'd':
 		nbr = va_arg(*li, int);
-		return (print_integer(nbr);
+		return (print_integer(nbr));
 	/* case ' ': */
 	/* 	return (check_format(c + 1, li)); */
 	case '\0':

@@ -10,13 +10,13 @@ int print_integer(int n)
 {
 	if (n < 0)
 	{
-		_putchar('-');
+		print_char('-');
 		n = -n;
-		return (1 + print_number(n);
+		return (1 + print_integer(n));
 	}
 	if (n > 9)
 	{
-		return (1 + print_number(n / 10));
+		return (1 + print_integer(n / 10));
 	}
 	print_char(n % 10 + '0');
 	return (1);
