@@ -29,8 +29,8 @@ int check_format(const char *c, va_list *li)
 	case 'd':
 		nbr = va_arg(*li, int);
 		return (print_integer(nbr);
-	case ' ':
-		return (check_format(c + 1, li));
+	/* case ' ': */
+	/* 	return (check_format(c + 1, li)); */
 	case '\0':
 		return (-1);
 	}
