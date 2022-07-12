@@ -22,8 +22,8 @@ int check_format(const char *c, va_list *li)
 	case 's':
 		str = va_arg(*li, char*);
 		return (print_string(str));
-	case ' ':
-		return (check_format(c + 1, li));
+	/* case ' ': */
+	/* 	return (check_format(c + 1, li)); */
 
 	case '\0':
 		return (-1);
