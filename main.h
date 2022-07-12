@@ -9,5 +9,6 @@ int check_format(const char*, va_list *);
 int print_char(char);
 int print_string(char *);
 int print_integer(int n);
+int _putchar(char c);
 
 #endif
