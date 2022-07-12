@@ -5,7 +5,7 @@
 #include <stdarg.h>
 
 int _printf(const char *format, ...);
-int check_format(char, va_list *);
+int check_format(const char*, va_list *);
 int print_char(char);
 int print_string(char *);
 

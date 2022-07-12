@@ -7,12 +7,12 @@
  *
  *Return: size of li's element printed
  */
-int check_format(char c, va_list *li)
+int check_format(const char *c, va_list *li)
 {
 	char t;
 	char *str;
 
-	switch (c)
+	switch (*c)
 	{
 	case 'c':
 		t = va_arg(*li, int);
@@ -22,6 +22,9 @@ int check_format(char c, va_list *li)
 	case 's':
 		str = va_arg(*li, char*);
 		return (print_string(str));
+	case ' ':
+		return (check_format(c + 1, li));
+		break;
 	case '\0':
 		return (-1);
 	}

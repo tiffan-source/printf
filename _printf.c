@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			r_check = check_format(format[i + 1], &my_list);
+			r_check = check_format(format + i + 1, &my_list);
 			if (r_check != -1)
 			{
 				count += r_check;
