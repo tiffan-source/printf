@@ -31,7 +31,7 @@ int print_string(char *str)
 		}
 	else
 	{
-		write(1, "(null)", 7);
+		write(1, "(null)", 6);
 		cnt = 6;
 	}
 	return (cnt);
