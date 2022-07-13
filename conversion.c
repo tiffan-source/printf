@@ -7,12 +7,13 @@
  */
 void convert_b(int n, int *p)
 {
-	if (n < 0)
+	/*if (n < 0)
 	{
+		return (-1);
 		_putchar('-');
 		n = -n;
 		++(*p);
-	}
+	}*/
 	if (n / 2)
 	{
 		++(*p);
@@ -30,6 +31,8 @@ int binary(int n)
 {
 	int count = 1;
 
+	if (n < 0)
+		return (-1);
 	convert_b(n, &count);
 	return (count);
 }
