@@ -5,15 +5,15 @@
  * @n: integer to convert
  * @p: to count size of n in binary
  */
-void convert_b(int n, int *p)
+void convert_b(long int n, int *p)
 {
-	/*if (n < 0)
+	if (n < 0)
 	{
-		return (-1);
+		/*return (-1);*/
 		_putchar('-');
 		n = -n;
 		++(*p);
-	}*/
+	}
 	if (n / 2)
 	{
 		++(*p);
@@ -27,12 +27,10 @@ void convert_b(int n, int *p)
  *
  * Return: size of n in binary
  */
-int binary(int n)
+int binary(long int n)
 {
 	int count = 1;
 
-	if (n < 0)
-		return (-1);
 	convert_b(n, &count);
 	return (count);
 }
