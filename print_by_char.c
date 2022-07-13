@@ -22,11 +22,17 @@ int print_string(char *str)
 {
 	int cnt = 0;
 
-	while (*str)
+	if (str != NULL)
+		while (*str)
+		{
+			write(1, str, 1);
+			cnt++;
+			str++;
+		}
+	else
 	{
-		write(1, str, 1);
-		cnt++;
-		str++;
+		write(1, "(null)", 6);
+		cnt = 6;
 	}
 	return (cnt);
 }

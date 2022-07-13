@@ -15,7 +15,8 @@ void convert_b(int n, int *p)
 		++(*p);
 	}
 	if (n / 2)
-	{	++(*p);
+	{
+		++(*p);
 		convert_b(n / 2, p);
 	}
 	_putchar((n % 2) + '0');
