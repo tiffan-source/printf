@@ -31,7 +31,9 @@ int check_format(const char *c, va_list *my_list)
 		return (binary(va_arg(*my_list, int)));
 
 	default:
-		return (0);
+		print_char('%');
+		print_char(*c);
+		return (2);
 	}
 }
 
