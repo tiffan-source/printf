@@ -16,7 +16,7 @@ int binary(long int n);
 int check_space(const char *str);
 int _printf_r(const char *str, va_list *my_list);
 void convert_b(long int n, int *p);
-void print(long int n, int *p);
 int print_octal(long int n);
 int print_hexa(long int n, int c);
+int print_binary(long int n);
 #endif
