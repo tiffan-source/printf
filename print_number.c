@@ -7,9 +7,9 @@
  *
  */
 
-void print(int n, int *p)
+void print(long int n, int *p)
 {
-	unsigned int num = n;
+	long int num = n;
 
 	if (n < 0)
 	{
@@ -33,7 +33,7 @@ void print(int n, int *p)
  * Return: Always all number (Success)
  */
 
-int print_integer(int n)
+int print_integer(long int n)
 {
 	int count = 1;
 

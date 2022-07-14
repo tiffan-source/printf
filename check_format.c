@@ -9,7 +9,6 @@
  */
 int check_format(const char *c, va_list *my_list)
 {
-	int d;
 	unsigned char c_copy;
 
 	switch (*c)
@@ -25,11 +24,16 @@ int check_format(const char *c, va_list *my_list)
 		return (print_char('%'));
 	case 'i':
 	case 'd':
-		d = va_arg(*my_list, int);
-		return (print_integer(d));
+		return (print_integer((long int)va_arg(*my_list, long int)));
 	case 'b':
 		return (binary((long int)va_arg(*my_list, long int)));
-
+	case 'u':
+		return (print_integer((long int)va_arg(*my_list, long int)));
+	case 'x':
+	case 'X':
+		return (print_hexa((long int)va_arg(*my_list, long int), *c));
+	case 'o':
+		return (print_octal((long int)va_arg(*my_list, long int)));
 	default:
 		return (0);
 	}
