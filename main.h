@@ -17,4 +17,6 @@ int check_space(const char *str);
 int _printf_r(const char *str, va_list *my_list);
 void convert_b(long int n, int *p);
 void print(int n, int *p);
+
+int print_binary(long int n);
 #endif

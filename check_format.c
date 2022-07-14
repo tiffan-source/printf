@@ -16,19 +16,24 @@ int check_format(const char *c, va_list *my_list)
 	{
 	case '\0':
 		return (-1);
+
 	case 'c':
 		c_copy = (unsigned char)va_arg(*my_list, int);
 		return (print_char(c_copy));
+
 	case 's':
 		return (print_string(va_arg(*my_list, char*)));
+
 	case '%':
 		return (print_char('%'));
+
 	case 'i':
 	case 'd':
 		d = va_arg(*my_list, int);
 		return (print_integer(d));
+
 	case 'b':
-		return (binary((long int)va_arg(*my_list, long int)));
+		return (print_binary((long int)va_arg(*my_list, long int)));
 
 	default:
 		print_char('%');
