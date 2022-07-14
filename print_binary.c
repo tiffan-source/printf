@@ -107,5 +107,11 @@ int print_binary(long int n)
 	}
 	lgt = print_table(result);
 
+	if (!lgt)
+	{
+		lgt = 1;
+		write(1, result, 1);
+	}
+
 	return (lgt);
 }
