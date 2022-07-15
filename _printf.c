@@ -25,14 +25,14 @@ int _printf_r(const char *str, va_list *my_list)
 		}
 		else
 		{
-			if (*str < 32 || *str >= 127)
-			{
-				_putchar('\\');
-				_putchar('x');
-				count += (print_hexa(*str, 'X') + 2);
-			}
-			else
-				print_char(*str);
+			/* if (*str < 32 || *str >= 127) */
+			/* { */
+			/* 	_putchar('\\'); */
+			/* 	_putchar('x'); */
+			/* 	count += (print_hexa(*str, 'X') + 2); */
+			/* } */
+			/* else */
+			print_char(*str);
 			count++;
 		}
 		str++;
