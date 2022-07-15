@@ -1,32 +1,44 @@
 #include "main.h"
-/**
- * print_octal - print n in octal
- * @n: number to print in octal
- *
- * Return: the size on n in octal
- */
+
+char *get_octal_table(char *table, char *result)
+{
+	int i, j, data = 0;
+
+	reverse_table(table, 32);
+
+	for (i = 0; i < 11; i++)
+	{
+		data = 0;
+
+		for (j = 0; (i != 10 && j < 3) || j < 2; j++)
+		{
+			data += ((table[3 * i + j] - '0') * pow_2(j));
+		}
+
+		result[i] = data + '0';
+	}
+
+	reverse_table(result, 11);
+
+	return (result);
+}
+
 int print_octal(long int n)
 {
-	int count = 1, i;
-	int tab[32];
+	char binary_table[32], octal_table[11];
+	int count;
 
-	if (n < 0)
+	get_binary(n, binary_table);
+
+	get_octal_table(binary_table, octal_table);
+
+	count = print_table(octal_table, 11);
+
+	if (!count)
 	{
-		_putchar('-');
-		count++;
-		n = -n;
+		count = 1;
+		write(1, octal_table, 1);
 	}
-	while (n / 8)
-	{
-		tab[count - 1] = (n % 8) + '0';
-		++count;
-		n = n / 8;
-	}
-
-	tab[count - 1] = ((n % 8) + '0');
-
-	for (i = count - 1; i >= 0; i--)
-		_putchar(tab[i]);
 
 	return (count);
 }

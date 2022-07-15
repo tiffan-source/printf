@@ -38,42 +38,6 @@ void invert_table(char *table)
 }
 
 /**
- * fill_table - init teble with bit 0
- * @table: table to init
- *
- */
-
-void fill_table(char *table)
-{
-	int i;
-
-	for (i = 0; i < 32; i++)
-		table[i] = '0';
-}
-
-/**
- * print_table - print a table
- * @table: tableto print
- *
- * Return: number of bit print
- */
-
-int print_table(char *table)
-{
-	int i, count = 0;
-
-	for (i = 0; i < 32; i++)
-	{
-		if (table[i] != '0' || count)
-		{
-			write(1, table + i, 1);
-			count++;
-		}
-	}
-	return (count);
-}
-
-/**
  * print_binary - convert n in baniry
  * @n: integer to convert
  *
@@ -105,7 +69,7 @@ int print_binary(long int n)
 		invert_table(result);
 		add_one(result);
 	}
-	lgt = print_table(result);
+	lgt = print_table(result, 32);
 
 	if (!lgt)
 	{
