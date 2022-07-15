@@ -14,7 +14,7 @@ int print_char(char);
 int print_string(char *);
 int print_integer(long int n);
 int print_octal(long int n);
-int print_hexa(long int n, int c);
+int print_hexa_type(long int n, int type);
 int print_binary(long int n);
 int print_unsigned_int(long int);
 

@@ -33,8 +33,9 @@ int check_format(const char *c, va_list *my_list)
 	case 'u':
 		return (print_unsigned_int((long int)va_arg(*my_list, long int)));
 	case 'x':
+		return (print_hexa_type((long int)va_arg(*my_list, long int), 0));
 	case 'X':
-		return (print_hexa((long int)va_arg(*my_list, long int), *c));
+		return (print_hexa_type((long int)va_arg(*my_list, long int), 1));
 	case 'o':
 		return (print_octal((long int)va_arg(*my_list, long int)));
 	case 'b':
