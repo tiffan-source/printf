@@ -19,20 +19,24 @@ int _printf_r(const char *str, va_list *my_list)
 			next = check_space(str + 1);
 			str += next;
 			test = check_format(str, my_list);
-
 			if (test == -1)
 				return (test);
 			count += test;
 		}
 		else
 		{
-			print_char(*str);
+			if (*str < 32 || *str >= 127)
+			{
+				_putchar('\\');
+				_putchar('x');
+				count += (print_hexa(*str, 'X') + 2);
+			}
+			else
+				print_char(*str);
 			count++;
 		}
-
 		str++;
 	}
-
 	return (count);
 }
 

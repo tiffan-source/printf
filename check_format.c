@@ -21,6 +21,7 @@ int check_format(const char *c, va_list *my_list)
 		return (print_char(c_copy));
 
 	case 's':
+	case 'S':
 		return (print_string(va_arg(*my_list, char*)));
 
 	case '%':
