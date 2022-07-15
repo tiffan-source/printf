@@ -16,6 +16,7 @@ int print_integer(long int n);
 int print_octal(long int n);
 int print_hexa(long int n, int c);
 int print_binary(long int n);
+int print_unsigned_int(long int);
 
 int _putchar(char c);
 int binary(long int n);
@@ -27,7 +28,7 @@ void add_one(char *);
 void fill_table(char *);
 int print_table(char *table, int size);
 void reverse_table(char *table, int size);
-int pow_2(int);
+unsigned long int pow_2(int a);
 void get_binary(long int n, char *result);
 
 

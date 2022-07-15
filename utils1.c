@@ -34,7 +34,7 @@ unsigned long int pow_2(int a)
 	if (a == 0)
 		return (1);
 	else
-		return (2 * pow_2(n - 1));
+		return (2 * pow_2(a - 1));
 }
 
 /**

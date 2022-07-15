@@ -31,7 +31,7 @@ int check_format(const char *c, va_list *my_list)
 	case 'd':
 		return (print_integer((long int)va_arg(*my_list, long int)));
 	case 'u':
-		return (print_integer((long int)va_arg(*my_list, long int)));
+		return (print_unsigned_int((long int)va_arg(*my_list, long int)));
 	case 'x':
 	case 'X':
 		return (print_hexa((long int)va_arg(*my_list, long int), *c));

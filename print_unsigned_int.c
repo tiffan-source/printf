@@ -11,7 +11,7 @@ unsigned long int convert_decimal(char *table)
 	return (sum);
 }
 
-int print_unsigned_int(long int)
+int print_unsigned_int(long int n)
 {
 	char binary_table[32];
 	unsigned long int data;
@@ -21,7 +21,7 @@ int print_unsigned_int(long int)
 
 	data = convert_decimal(binary_table);
 
-	count = print_number(data);
+	count = print_integer(data);
 
 	return (count);
 }
