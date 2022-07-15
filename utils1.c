@@ -29,14 +29,12 @@ int print_table(char *table, int size)
  * Return: 1 or 2 or 4
  */
 
-int pow_2(int a)
+unsigned long int pow_2(int a)
 {
 	if (a == 0)
 		return (1);
-	else if (a == 1)
-		return (2);
 	else
-		return (4);
+		return (2 * pow_2(n - 1));
 }
 
 /**
